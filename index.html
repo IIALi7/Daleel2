@@ -26,17 +26,17 @@
             text-align: center;
         }
 
-            nav a {
-                color: white;
-                text-decoration: none;
-                margin: 0 15px;
-                font-weight: bold;
-                transition: color 0.3s;
-            }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
 
-                nav a:hover {
-                    color: #d4edda;
-                }
+        nav a:hover {
+            color: #d4edda;
+        }
 
         main {
             padding: 30px 20px;
@@ -72,9 +72,9 @@
             position: relative;
         }
 
-            .password-container input {
-                padding-left: 50px;
-            }
+        .password-container input {
+            padding-left: 50px;
+        }
 
         .toggle-password {
             position: absolute;
@@ -100,9 +100,9 @@
             transition: background-color 0.3s;
         }
 
-            button[type="submit"]:hover {
-                background-color: #3b5e57;
-            }
+        button[type="submit"]:hover {
+            background-color: #3b5e57;
+        }
 
         footer {
             text-align: center;
@@ -123,7 +123,7 @@
     </nav>
 
     <main>
-        <form action="index.html" method="get">
+        <form onsubmit="handleLogin(event)">
             <label for="username">اسم المستخدم:</label>
             <input type="text" id="username" name="username" required>
 
@@ -151,6 +151,18 @@
             } else {
                 passwordInput.type = "password";
                 toggleBtn.textContent = "إظهار";
+            }
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (username && password) {
+                window.location.href = "home.html"; // redirect to homepage
+            } else {
+                alert("يرجى إدخال اسم المستخدم وكلمة المرور.");
             }
         }
     </script>
