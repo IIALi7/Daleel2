@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>نموذج الاهتمام</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f4f7f5;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #e6f0ec;
+        }
+
+        nav {
+            background-color: #4a766e;
+            padding: 10px;
+            text-align: center;
+        }
+
+            nav a {
+                color: #ffffff;
+                text-decoration: none;
+                margin: 0 15px;
+                font-weight: bold;
+                transition: color 0.3s;
+            }
+
+                nav a:hover {
+                    color: #d4edda;
+                }
+
+        main {
+            padding: 30px 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        form {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #4a766e;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            padding: 8px;
+            width: 90%;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin: 8px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4a766e;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+            button:hover {
+                background-color: #3b5e57;
+            }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #e6f0ec;
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>نموذج الاهتمام بالسياحة</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="places.html">المعالم</a>
+        <a href="contact.html">تواصل</a>
+        <a href="form.html">نموذج</a>
+        <a href="login.html">خروج</a>
+    </nav>
+
+    <main>
+        <form>
+            <fieldset>
+                <legend>البيانات الشخصية</legend>
+                الاسم:<br>
+                <input type="text" required><br>
+                العمر:<br>
+                <input type="number">
+            </fieldset>
+
+            <fieldset>
+                <legend>العنوان</legend>
+                المدينة:<br>
+                <input type="text"><br>
+                الدولة:<br>
+                <input type="text">
+            </fieldset>
+
+            <fieldset>
+                <legend>الاهتمامات السياحية</legend>
+                <label><input type="checkbox"> المواقع الدينية</label>
+                <label><input type="checkbox"> المواقع الطبيعية</label>
+                <label><input type="checkbox"> المواقع الحديثة</label>
+            </fieldset>
+
+            <div style="text-align: center;">
+                <button type="submit">إرسال</button>
+                <button type="reset">إلغاء</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        &copy; 2025 دليل السياحة
+    </footer>
+</body>
+</html>
