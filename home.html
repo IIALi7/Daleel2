@@ -4,55 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دليل – رحلتك تبدأ من هنا</title>
-    <link rel="stylesheet" href="style/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #f4f7f5; color: #333; margin: 0; padding: 0; }
-        /* باقي التنسيقات حسب تصميمك السابق */
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f4f7f5;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4a766e;
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+        header img {
+            height: 100px;
+        }
+        nav {
+            background-color: #4a766e;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #d4edda;
+        }
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+        main h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+        main p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        main img {
+            width: 80%;
+            max-width: 400px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #4a766e;
+            text-align: center;
+            color: white;
+            padding: 15px;
+            margin-top: 30px;
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <img src="images/logo.png" alt="شعار دليل">
-    <h1>دليل – رحلتك تبدأ من هنا</h1>
-</header>
+    <header>
+        <img src="images/logo.png" alt="شعار دليل">
+        <h1>دليل – رحلتك تبدأ من هنا</h1>
+    </header>
 
-<nav>
-    <a href="home.html">الرئيسية</a>
-    <a href="places.html">المعالم</a>
-    <a href="contact.html">تواصل</a>
-    <a href="form.html">نموذج</a>
-    <a href="index.html" id="loginLink">تسجيل الدخول</a>
-</nav>
+    <nav>
+        <a href="home.html">الرئيسية</a>
+        <a href="places.html">المعالم</a>
+        <a href="contact.html">تواصل</a>
+        <a href="form.html">نموذج</a>
+        <a id="loginLink" href="index.html">تسجيل الدخول</a>
+    </nav>
 
-<main>
-    <h2>اكتشف أجمل مدن المملكة</h2>
-    <p>يقدم موقع "دليل" معلومات سياحية لأشهر المدن السعودية مثل الرياض، جدة، العلا، نيوم، وغيرها.</p>
-    <img src="images/ksa.jpg" alt="خريطة المملكة">
-</main>
+    <main>
+        <h2>اكتشف أجمل مدن المملكة</h2>
+        <p>يقدم موقع "دليل" معلومات سياحية لأشهر المدن السعودية مثل الرياض، جدة، العلا، نيوم، وغيرها.</p>
+        <img src="images/ksa.jpg" alt="خريطة المملكة العربية السعودية">
+    </main>
 
-<footer>
-    تواصل معنا: info@daleel.com |
-</footer>
+    <footer>
+        تواصل معنا: info@daleel.com
+    </footer>
 
-<script>
-window.onload = function() {
-    const loginLink = document.getElementById('loginLink');
-
-    if (localStorage.getItem('loggedIn') === 'true') {
-        loginLink.textContent = 'خروج';
-        loginLink.href = '#';
-        loginLink.onclick = function() {
-            localStorage.removeItem('loggedIn');
-            window.location.href = 'index.html';
+    <script>
+        window.onload = function() {
+            const loginLink = document.getElementById('loginLink');
+            if (localStorage.getItem('loggedIn') === 'true') {
+                loginLink.textContent = 'خروج';
+                loginLink.href = "#";
+                loginLink.onclick = function() {
+                    localStorage.removeItem('loggedIn');
+                    window.location.href = "index.html";
+                };
+            } else {
+                loginLink.textContent = 'تسجيل الدخول';
+                loginLink.href = 'index.html';
+            }
         };
-    } else {
-        loginLink.textContent = 'تسجيل الدخول';
-        loginLink.href = 'index.html';
-    }
-};
-</script>
+    </script>
 
 </body>
 </html>
