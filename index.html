@@ -13,19 +13,16 @@
             margin: 0;
             padding: 0;
         }
-
         header {
             text-align: center;
             padding: 20px;
             background-color: #e6f0ec;
         }
-
         nav {
             background-color: #4a766e;
             padding: 10px;
             text-align: center;
         }
-
         nav a {
             color: white;
             text-decoration: none;
@@ -33,11 +30,9 @@
             font-weight: bold;
             transition: color 0.3s;
         }
-
         nav a:hover {
             color: #d4edda;
         }
-
         main {
             padding: 30px 20px;
             max-width: 500px;
@@ -46,18 +41,15 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
         form {
             text-align: right;
         }
-
         label {
             display: block;
             margin: 10px 0 5px;
             font-weight: bold;
             color: #333;
         }
-
         input[type="text"], input[type="password"] {
             width: 100%;
             padding: 15px;
@@ -67,15 +59,12 @@
             font-size: 16px;
             box-sizing: border-box;
         }
-
         .password-container {
             position: relative;
         }
-
         .password-container input {
             padding-left: 50px;
         }
-
         .toggle-password {
             position: absolute;
             left: 10px;
@@ -87,7 +76,6 @@
             font-size: 14px;
             color: #4a766e;
         }
-
         button[type="submit"] {
             width: 100%;
             padding: 10px;
@@ -99,11 +87,9 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
         button[type="submit"]:hover {
             background-color: #3b5e57;
         }
-
         footer {
             text-align: center;
             padding: 15px;
@@ -160,7 +146,8 @@
             const password = document.getElementById("password").value.trim();
 
             if (username && password) {
-                window.location.href = "home.html"; // redirect to homepage
+                localStorage.setItem('loggedIn', 'true'); // تخزين حالة الدخول
+                window.location.href = "home.html"; // توجيه للصفحة الرئيسية
             } else {
                 alert("يرجى إدخال اسم المستخدم وكلمة المرور.");
             }
