@@ -25,17 +25,17 @@
             text-align: center;
         }
 
-            nav a {
-                color: #ffffff;
-                text-decoration: none;
-                margin: 0 15px;
-                font-weight: bold;
-                transition: color 0.3s;
-            }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
 
-                nav a:hover {
-                    color: #d4edda;
-                }
+        nav a:hover {
+            color: #d4edda;
+        }
 
         main {
             padding: 30px 20px;
@@ -88,9 +88,9 @@
             margin: 10px;
         }
 
-            button:hover {
-                background-color: #3b5e57;
-            }
+        button:hover {
+            background-color: #3b5e57;
+        }
 
         footer {
             text-align: center;
@@ -107,15 +107,15 @@
     </header>
 
     <nav>
-       <a href="home.html">الرئيسية</a>
+        <a href="home.html">الرئيسية</a>
         <a href="places.html">المعالم</a>
         <a href="contact.html">تواصل</a>
         <a href="form.html">نموذج</a>
-       <a href="index.html">تسجيل الدخول</a>
+        <a href="index.html">تسجيل الدخول</a>
     </nav>
 
     <main>
-        <form>
+        <form onsubmit="showSuccessMessage(event)">
             <fieldset>
                 <legend>البيانات الشخصية</legend>
                 الاسم:<br>
@@ -149,5 +149,13 @@
     <footer>
         &copy; 2025 دليل السياحة
     </footer>
+
+    <script>
+        function showSuccessMessage(event) {
+            event.preventDefault();
+            alert('تم الإرسال بنجاح!');
+            document.querySelector('form').reset();
+        }
+    </script>
 </body>
 </html>
