@@ -14,65 +14,54 @@
             margin: 0;
             padding: 0;
         }
-
         header {
             text-align: center;
             padding: 20px;
-            background-color: #e6f0ec; /* خلفية فاتحة */
+            background-color: #e6f0ec;
         }
-
-            header img {
-                height: 120px;
-            }
-
-            header h1 {
-                font-size: 24px;
-                color: #333;
-            }
-
+        header img {
+            height: 120px;
+        }
+        header h1 {
+            font-size: 24px;
+            color: #333;
+        }
         nav {
-            background-color: #4a766e; /* اللون الأخضر */
+            background-color: #4a766e;
             padding: 10px;
             text-align: center;
         }
-
-            nav a {
-                color: white;
-                text-decoration: none;
-                margin: 0 15px;
-                font-weight: bold;
-                transition: color 0.3s;
-            }
-
-                nav a:hover {
-                    color: #d4edda; /* اللون الفاتح عند التمرير */
-                    background-color: #3b5e57;
-                    border-radius: 5px;
-                    padding: 5px 10px;
-                }
-
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #d4edda;
+            background-color: #3b5e57;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
         main {
             text-align: center;
             padding: 20px;
         }
-
-            main h2 {
-                font-size: 28px;
-                color: #333;
-            }
-
-            main p {
-                font-size: 18px;
-                margin-bottom: 20px;
-            }
-
-            main img {
-                width: 40%;
-                max-width: 300px;
-                border-radius: 15px;
-                margin-top: 20px;
-            }
-
+        main h2 {
+            font-size: 28px;
+            color: #333;
+        }
+        main p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        main img {
+            width: 40%;
+            max-width: 300px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
         footer {
             text-align: center;
             padding: 15px;
@@ -95,7 +84,7 @@
         <a href="places.html">المعالم</a>
         <a href="contact.html">تواصل</a>
         <a href="form.html">نموذج</a>
-        <a href="index.html">تسجيل الدخول</a>
+        <a id="loginLink" href="index.html">تسجيل الدخول</a>
     </nav>
 
     <main>
@@ -107,6 +96,24 @@
     <footer>
         تواصل معنا: info@daleel.com |
     </footer>
+
+    <script>
+        window.onload = function() {
+            const loginLink = document.getElementById('loginLink');
+
+            if (localStorage.getItem('loggedIn') === 'true') {
+                loginLink.textContent = 'خروج';
+                loginLink.href = '#';
+                loginLink.onclick = function() {
+                    localStorage.removeItem('loggedIn');
+                    window.location.href = 'index.html';
+                };
+            } else {
+                loginLink.textContent = 'تسجيل الدخول';
+                loginLink.href = 'index.html';
+            }
+        };
+    </script>
 
 </body>
 </html>
