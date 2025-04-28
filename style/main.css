@@ -8,8 +8,8 @@ body {
 header {
     background-color: #e6f0ec;
     color: #333;
-    padding: 20px;
     text-align: center;
+    padding: 20px;
 }
 
 nav {
@@ -19,7 +19,7 @@ nav {
 }
 
 nav a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
@@ -29,6 +29,9 @@ nav a {
 
 nav a:hover {
     color: #d4edda;
+    background-color: #3b5e57;
+    border-radius: 5px;
+    padding: 5px 10px;
 }
 
 main {
@@ -44,7 +47,7 @@ footer {
     font-size: 0.9em;
 }
 
-/* أزرار وأدخالات عامة */
+/* تنسيق الحقول والأزرار */
 input[type="text"],
 input[type="password"],
 input[type="email"],
