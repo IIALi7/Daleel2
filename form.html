@@ -2,11 +2,91 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>نموذج الاهتمام</title>
+    <title>نموذج الاهتمام بالسياحة</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #f4f7f5; color: #2c3e50; margin: 0; padding: 0; }
-        /* باقي التنسيقات حسب تصميمك السابق */
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f4f7f5;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4a766e;
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+        nav {
+            background-color: #4a766e;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #d4edda;
+        }
+        main {
+            padding: 30px 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        fieldset {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        legend {
+            font-weight: bold;
+            color: #4a766e;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            margin-top: 8px;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4a766e;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #3b5e57;
+        }
+        footer {
+            background-color: #4a766e;
+            text-align: center;
+            color: white;
+            padding: 15px;
+            margin-top: 30px;
+        }
     </style>
 </head>
 <body>
@@ -20,24 +100,24 @@
     <a href="places.html">المعالم</a>
     <a href="contact.html">تواصل</a>
     <a href="form.html">نموذج</a>
-    <a href="index.html" id="loginLink">تسجيل الدخول</a>
+    <a id="loginLink" href="index.html">تسجيل الدخول</a>
 </nav>
 
 <main>
     <form onsubmit="showSuccessMessage(event)">
         <fieldset>
             <legend>البيانات الشخصية</legend>
-            الاسم:<br>
-            <input type="text" required><br>
-            العمر:<br>
+            <label>الاسم:</label>
+            <input type="text" required>
+            <label>العمر:</label>
             <input type="number">
         </fieldset>
 
         <fieldset>
             <legend>العنوان</legend>
-            المدينة:<br>
-            <input type="text"><br>
-            الدولة:<br>
+            <label>المدينة:</label>
+            <input type="text">
+            <label>الدولة:</label>
             <input type="text">
         </fieldset>
 
@@ -60,26 +140,26 @@
 </footer>
 
 <script>
-function showSuccessMessage(event) {
-    event.preventDefault();
-    alert('تم الإرسال بنجاح!');
-    document.querySelector('form').reset();
-}
+    window.onload = function() {
+        const loginLink = document.getElementById('loginLink');
+        if (localStorage.getItem('loggedIn') === 'true') {
+            loginLink.textContent = 'خروج';
+            loginLink.href = "#";
+            loginLink.onclick = function() {
+                localStorage.removeItem('loggedIn');
+                window.location.href = "index.html";
+            };
+        } else {
+            loginLink.textContent = 'تسجيل الدخول';
+            loginLink.href = 'index.html';
+        }
+    };
 
-window.onload = function() {
-    const loginLink = document.getElementById('loginLink');
-    if (localStorage.getItem('loggedIn') === 'true') {
-        loginLink.textContent = 'خروج';
-        loginLink.href = '#';
-        loginLink.onclick = function() {
-            localStorage.removeItem('loggedIn');
-            window.location.href = 'index.html';
-        };
-    } else {
-        loginLink.textContent = 'تسجيل الدخول';
-        loginLink.href = 'index.html';
+    function showSuccessMessage(event) {
+        event.preventDefault();
+        alert('تم الإرسال بنجاح!');
+        document.querySelector('form').reset();
     }
-};
 </script>
 
 </body>
