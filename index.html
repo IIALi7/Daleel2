@@ -1,62 +1,65 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تسجيل الدخول</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
-<style>
-body { font-family: 'Cairo', sans-serif; background-color: #f4f7f5; color: #2c3e50; margin: 0; padding: 0; }
-/* باقي التنسيقات حسب تصميمك السابق */
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/main.css"> <!-- هذا السطر مهم عشان يجينا التنسيق الصحيح -->
 </head>
 <body>
-<header><h1>تسجيل الدخول</h1></header>
+    <header>
+        <h1>تسجيل الدخول</h1>
+    </header>
 
-<nav>
-  <a href="index.html" id="loginLink">تسجيل الدخول</a>
-</nav>
+    <nav>
+        <a href="index.html">تسجيل الدخول</a>
+    </nav>
 
-<main>
-  <form onsubmit="handleLogin(event)">
-    <label for="username">اسم المستخدم:</label>
-    <input type="text" id="username" name="username" required>
-    <label for="password">كلمة المرور:</label>
-    <div class="password-container">
-      <input type="password" id="password" name="password" required>
-      <button type="button" class="toggle-password" onclick="togglePassword()">إظهار</button>
-    </div>
-    <button type="submit">دخول</button>
-  </form>
-</main>
+    <main>
+        <form onsubmit="handleLogin(event)">
+            <label for="username">اسم المستخدم:</label>
+            <input type="text" id="username" name="username" required>
 
-<footer>&copy; 2025 دليل السياحة</footer>
+            <label for="password">كلمة المرور:</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" required>
+                <button type="button" class="toggle-password" onclick="togglePassword()">إظهار</button>
+            </div>
 
-<script>
-function togglePassword() {
-  const passwordInput = document.getElementById("password");
-  const toggleBtn = document.querySelector(".toggle-password");
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    toggleBtn.textContent = "إخفاء";
-  } else {
-    passwordInput.type = "password";
-    toggleBtn.textContent = "إظهار";
-  }
-}
+            <button type="submit">دخول</button>
+        </form>
+    </main>
 
-function handleLogin(event) {
-  event.preventDefault();
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
-  if (username && password) {
-    localStorage.setItem('loggedIn', 'true');
-    window.location.href = "home.html";
-  } else {
-    alert("يرجى إدخال اسم المستخدم وكلمة المرور.");
-  }
-}
-</script>
+    <footer>
+        &copy; 2025 دليل السياحة
+    </footer>
 
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById("password");
+            const toggleBtn = document.querySelector(".toggle-password");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleBtn.textContent = "إخفاء";
+            } else {
+                passwordInput.type = "password";
+                toggleBtn.textContent = "إظهار";
+            }
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (username && password) {
+                localStorage.setItem('loggedIn', 'true');
+                window.location.href = "home.html";
+            } else {
+                alert("يرجى إدخال اسم المستخدم وكلمة المرور.");
+            }
+        }
+    </script>
 </body>
 </html>
