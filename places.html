@@ -5,10 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>المعالم السياحية</title>
     <link href="https://fonts.googleapis.com/css2?family=Almarai&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Almarai', sans-serif; background-color: #f4f7f5; color: #2c3e50; margin: 0; padding: 0; }
-        /* باقي التنسيقات حسب تصميمك السابق */
+        body {
+            font-family: 'Almarai', sans-serif;
+            background-color: #f4f7f5;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4a766e;
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+        nav {
+            background-color: #4a766e;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #d4edda;
+        }
+        main {
+            padding: 30px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #004080;
+        }
+        .city {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .city img {
+            width: 80%;
+            max-width: 300px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .city h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .city p {
+            font-size: 1em;
+            color: #555;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #4a766e;
+            text-align: center;
+            color: white;
+            padding: 15px;
+            margin-top: 30px;
+        }
     </style>
 </head>
 <body>
@@ -22,7 +82,7 @@
     <a href="places.html">المعالم</a>
     <a href="contact.html">تواصل</a>
     <a href="form.html">نموذج</a>
-    <a href="index.html" id="loginLink">تسجيل الدخول</a>
+    <a id="loginLink" href="index.html">تسجيل الدخول</a>
 </nav>
 
 <main>
@@ -49,42 +109,42 @@
     <div class="city">
         <h3>الرياض</h3>
         <img src="images/riyadh.jpg" alt="مركز كافد">
-        <p>مركز كافد، من أحدث المشاريع الحضارية والمعمارية في العاصمة الرياض.</p>
+        <p>مركز كافد، مشروع حضاري ومعماري حديث في الرياض.</p>
     </div>
 
     <div class="city">
         <h3>جدة</h3>
-        <img src="images/jeedah.jpg" alt="جدة">
-        <p>جدة، مدينة ساحلية على البحر الأحمر، تتميز بمعالم مثل كورنيش جدة ونافورة الملك فهد، وتجمع بين التراث والحداثة.</p>
+        <img src="images/jeedah.jpg" alt="كورنيش جدة">
+        <p>جدة مدينة ساحلية جميلة على البحر الأحمر، مع معالم مميزة مثل كورنيش جدة ونافورة الملك فهد.</p>
     </div>
 
     <div class="city">
         <h3>نجران</h3>
         <img src="images/najran.jpg" alt="نجران">
-        <p>نجران، مدينة تاريخية جنوب المملكة، تشتهر بموقعها الجميل ومعالم مثل قصر الإمارة وقرية الرفاع.</p>
+        <p>نجران، مدينة تاريخية جنوب المملكة تتميز بالتراث والمواقع الأثرية.</p>
     </div>
 
 </main>
 
 <footer>
-    <p>استكشف أجمل الأماكن في المملكة.</p>
+    استكشف أجمل الأماكن في المملكة مع دليل.
 </footer>
 
 <script>
-window.onload = function() {
-    const loginLink = document.getElementById('loginLink');
-    if (localStorage.getItem('loggedIn') === 'true') {
-        loginLink.textContent = 'خروج';
-        loginLink.href = '#';
-        loginLink.onclick = function() {
-            localStorage.removeItem('loggedIn');
-            window.location.href = 'index.html';
-        };
-    } else {
-        loginLink.textContent = 'تسجيل الدخول';
-        loginLink.href = 'index.html';
-    }
-};
+    window.onload = function() {
+        const loginLink = document.getElementById('loginLink');
+        if (localStorage.getItem('loggedIn') === 'true') {
+            loginLink.textContent = 'خروج';
+            loginLink.href = "#";
+            loginLink.onclick = function() {
+                localStorage.removeItem('loggedIn');
+                window.location.href = "index.html";
+            };
+        } else {
+            loginLink.textContent = 'تسجيل الدخول';
+            loginLink.href = 'index.html';
+        }
+    };
 </script>
 
 </body>
